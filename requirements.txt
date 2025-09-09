@@ -1,9 +1,18 @@
+# Streamlit Web GUI
 streamlit==1.28.0
-torch==2.2.0
+
+# PyTorch CPU-only for summarization
+torch==2.2.0+cpu
 transformers==4.41.0
+
+# Image handling
 pillow==10.0.0
+
+# Excel / CSV / Data handling
 pandas==2.1.0
-PyPDF2==3.1.0
-python-docx==0.8.12
 openpyxl==3.1.2
 xlrd==2.0.1
+
+# PDF and DOCX handling
+PyPDF2==3.1.0
+python-docx==0.8.12
