@@ -1,4 +1,4 @@
-# main.py
+# main.py (Cloud-safe CPU version)
 import os
 import time
 import streamlit as st
@@ -50,7 +50,7 @@ def render_tags(tags):
 # Streamlit Config
 # ==============================
 st.set_page_config(page_title="AutoTagr - Smart File Organizer", layout="wide")
-st.title("📂 AutoTagr – Smart File Organizer with AI Labeling")
+st.title("📂 AutoTagr – Smart File Organizer with AI Labeling (CPU-ready)")
 
 # ==============================
 # Global CSS
@@ -152,36 +152,42 @@ with col1:
         )
 
 # ==============================
-# MIDDLE: Folder Sorting (Streamlit-compatible)
+# MIDDLE: Folder Sorting
 # ==============================
 with col2:
     st.subheader("📂 Folder Sorting")
 
-    # Manual folder path input
     folder_input = st.text_input("📂 Enter folder path manually", value=st.session_state.folder_path)
     if st.button("Set Folder"):
         if os.path.exists(folder_input):
             st.session_state.folder_path = folder_input
             st.success(f"📁 Folder set manually: {folder_input}")
-        else:
-            st.error("Invalid folder path")
+        else: st.error("❌ Invalid folder path")
 
-    # Sort folder button
+    # PyQt5 Browse removed for Streamlit Cloud
+    # def pick_folder():
+    #     from PyQt5.QtWidgets import QApplication, QFileDialog
+    #     import sys
+    #     app = QApplication.instance()
+    #     if app is None: app = QApplication(sys.argv)
+    #     return QFileDialog.getExistingDirectory(None, "Select Folder")
+    #
+    # if st.button("Browse Folder"):
+    #     selected_folder = pick_folder()
+    #     if selected_folder:
+    #         st.session_state.folder_path = selected_folder
+    #         st.success(f"📁 Selected folder: {selected_folder}")
+
     if st.button("Sort Folder"):
         if st.session_state.folder_path and os.path.exists(st.session_state.folder_path):
-            result = sort_files(st.session_state.folder_path)
-            st.success(result)
-        else:
-            st.error("Please select a valid folder.")
+            st.success(sort_files(st.session_state.folder_path, rename=False))
+        else: st.error("❌ Please select a valid folder.")
 
-    # Sort + AI auto-rename
     if st.button("Sort All (AI + Rename)"):
         if st.session_state.folder_path and os.path.exists(st.session_state.folder_path):
             with st.spinner("⏳ Sorting with AI..."):
-                result = auto_rename_files(st.session_state.folder_path)
-                st.success(result)
-        else:
-            st.error("Please select a valid folder.")
+                st.success(sort_files(st.session_state.folder_path, rename=True))
+        else: st.error("❌ Please select a valid folder.")
 
 # ==============================
 # RIGHT: Quick Preview
