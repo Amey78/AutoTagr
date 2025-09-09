@@ -1,26 +1,20 @@
-# Streamlit (latest compatible)
-streamlit
+# Streamlit UI
+streamlit==1.49.1
 
-# Torch CPU version compatible with Python 3.13
-torch==2.8.0
+# PyTorch
+torch==2.8.0   # CPU version, GPU optional depending on cloud
 
-# Transformers (latest stable)
-transformers
+# HuggingFace Transformers
+transformers  
 
-# Pillow (Python 3.13 compatible)
-Pillow==9.5.0
+# Image handling
+Pillow>=10.0.1  
 
-# Pandas (latest stable)
-pandas
+# Word documents
+python-docx>=0.8.12  # exact 0.8.12 unavailable, >= works
 
-# PyPDF2 (stable for Python 3.13)
-PyPDF2==3.0.1
-
-# Python-docx (latest stable)
-python-docx
-
-# Openpyxl (latest stable)
-openpyxl
-
-# xlrd (latest stable)
-xlrd
+# Logging & Rich display
+rich   # latest compatible version
+markdown-it-py   # required by rich
+pygments        # required by rich
+mdurl           # required by markdown-it-py
