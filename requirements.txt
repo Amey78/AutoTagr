@@ -2,19 +2,23 @@
 streamlit==1.49.1
 
 # PyTorch
-torch==2.8.0   # CPU version, GPU optional depending on cloud
+torch==2.8.0   # CPU version (GPU optional)
 
 # HuggingFace Transformers
-transformers  
+transformers
+sentencepiece   # required for some transformer models
+
+# File handling
+pandas
+openpyxl
+python-docx>=0.8.12
+PyPDF2
 
 # Image handling
 Pillow>=10.0.1  
 
-# Word documents
-python-docx>=0.8.12  # exact 0.8.12 unavailable, >= works
-
 # Logging & Rich display
-rich   # latest compatible version
-markdown-it-py   # required by rich
-pygments        # required by rich
-mdurl           # required by markdown-it-py
+rich
+markdown-it-py
+pygments
+mdurl
