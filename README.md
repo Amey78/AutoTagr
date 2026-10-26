@@ -4,17 +4,17 @@ AutoTagr is a desktop & web-based application that intelligently summarizes file
 
 ## Features
 
-### 1️⃣ File Summarization
+### 1️. File Summarization
 - Supports **PDF, DOCX, TXT, Excel, CSV**
 - Generates concise summaries
 - Suggests relevant tags
 - Clear & Download buttons for summaries
 
-### 2️⃣ Folder Sorting
+### 2️. Folder Sorting
 - Sorts files by type into subfolders (PDF, DOCX, TXT, Others)
 - AI-based auto-renaming based on summary tags
 
-### 3️⃣ Deployment Ready
+### 3️. Deployment Ready
 - CPU/GPU auto-detection:
   - Local PC with GPU → uses GPU
   - Streamlit Cloud / PC without GPU → automatically uses CPU
