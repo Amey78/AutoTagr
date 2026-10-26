@@ -1,4 +1,4 @@
-# 📂 AutoTagr – Smart File Organizer with AI Labeling
+# AutoTagr – Smart File Organizer with AI Labeling
 
 AutoTagr is a desktop & web-based application that intelligently summarizes files, generates tags, and organizes your folders automatically using AI. CPU/GPU auto-detection ensures smooth performance on any system.
 
